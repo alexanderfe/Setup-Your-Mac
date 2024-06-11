@@ -151,7 +151,7 @@ exitCode="0"
 # Configuration Variables
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 
-configurationDownloadEstimation="true"      # [ true (default) | false ]
+configurationDownloadEstimation="false"      # [ true (default) | false ]
 correctionCoefficient="1.01"                # "Fudge factor" (to help estimate match reality)
 
 configurationCatchAllSize="34"              # Catch-all Configuration in Gibibits (i.e., Total File Size in Gigabytes * 7.451)
@@ -163,7 +163,7 @@ configurationOneSize="34"                   # Configuration One in Gibibits (i.e
 configurationOneInstallBuffer="0"           # Buffer time added to estimates to include installation time of packages, in seconds. Set to 0 to disable. 
 
 configurationTwoName="Recommended"
-configurationTwoDescription="Required apps and Microsoft 365"
+configurationTwoDescription="Required applications and Microsoft Office 2021"
 configurationTwoSize="62"                   # Configuration Two in Gibibits (i.e., Total File Size in Gigabytes * 7.451) 
 configurationTwoInstallBuffer="0"           # Buffer time added to estimates to include installation time of packages, in seconds. Set to 0 to disable. 
 
@@ -594,7 +594,7 @@ fi
 welcomeMessage+="\n\n---"
 
 if { [[ "${promptForConfiguration}" == "true" ]] && [[ "${welcomeDialog}" != "messageOnly" ]]; } then
-    welcomeMessage+="  \n\n#### Configurations  \n- **${configurationOneName}:** ${configurationOneDescription}  \n- **${configurationTwoName}:** ${configurationTwoDescription}  \n- **${configurationThreeName}:** ${configurationThreeDescription}"
+    welcomeMessage+="  \n\n#### Configurations  \n- **${configurationOneName}:** ${configurationOneDescription}  \n- **${configurationTwoName}:** ${configurationTwoDescription}"
 else
     welcomeMessage=${welcomeMessage//", select your preferred **Configuration**"/}
 fi
@@ -759,8 +759,7 @@ if [ "$promptForConfiguration" == "true" ] && [ -z "${presetConfiguration}" ]; t
             "default" : "'"${configurationOneName}"'",
             "values" : [
                 "'"${configurationOneName}"'",
-                "'"${configurationTwoName}"'",
-                "'"${configurationThreeName}"'"
+                "'"${configurationTwoName}"'"
             ]
         }'
 fi
