@@ -2107,7 +2107,6 @@ welcomeJSON='
     "infobox" : "Analyzing …",
     "iconsize" : "198",
     "button1text" : "Continue",
-    "button2text" : "Quit",
     "infotext" : "'"${scriptVersion}"'",
     "blurscreen" : "true",
     "ontop" : "true",
